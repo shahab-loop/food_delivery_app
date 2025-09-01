@@ -10,7 +10,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:sizer/sizer.dart';
 
 import 'screens/auth/forgot_password/forgot_password.dart';
-import 'widgets/drawer.dart';
+import 'widgets/my_drawer.dart';
 
 void main() {
   runApp(const MyApp());

@@ -11,6 +11,9 @@ class ThemeManager {
   static const Color primaryColor = Color(0xffFF785B);
   static const Color backgroundColor = Color(0xffFBEDEA);
   static const Color fbColor = Color(0xff0F71A8);
+  static const Color white12 = Color(0xffF1F1F2);
+  static const Color borderColor = Color(0xffC4C4C4);
+
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     // primarySwatch: Colors.blue,

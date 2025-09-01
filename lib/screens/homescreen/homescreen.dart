@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
-import 'package:food_delivery_app/widgets/drawer.dart';
-import 'package:food_delivery_app/widgets/drawer_list.dart';
+import 'package:food_delivery_app/widgets/my_drawer.dart';
+import 'package:food_delivery_app/widgets/drawer_tile.dart';
 import 'package:food_delivery_app/widgets/menuelist_widget.dart';
 import 'package:gap/gap.dart';
 
@@ -156,10 +156,7 @@ class Homescreen extends StatelessWidget {
                       review: '(203 ratings)',
                       price: '₦3000',
                     ),
-                    DrawerTile(
-                      iconpath: 'assets/svgs/heart.svg',
-                      data: 'Wish List',
-                    ),
+
                   ],
                 ),
               ),

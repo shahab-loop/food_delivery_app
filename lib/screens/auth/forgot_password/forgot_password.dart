@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/common/base_scaffold.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
+import 'package:food_delivery_app/screens/auth/verification/verification.dart';
 import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
 import 'package:food_delivery_app/widgets/button_widget.dart';
 import 'package:food_delivery_app/widgets/circleavatar_widget.dart';
@@ -42,7 +43,7 @@ class ForgotPassword extends StatelessWidget {
                     ButtonWidget(
                       text: 'Reset Password',
                       onTap: () {
-                        Get.to(() => Homescreen());
+                        Get.to(() => Verification());
                       },
                     ),
                   ],

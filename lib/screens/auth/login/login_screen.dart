@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/common/base_scaffold.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
+import 'package:food_delivery_app/screens/auth/forgot_password/forgot_password.dart';
 import 'package:food_delivery_app/screens/auth/reset_password/reset_password.dart';
 import 'package:food_delivery_app/screens/auth/verification/verification.dart';
 import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
@@ -37,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                 const Gap(27),
                 GestureDetector(onTap: () {
                   // Get.toNamed('/forgot_password');
-                  Get.to(() => Verification());
+                  Get.to(() => ForgotPassword());
                 },
                   child: Text(
                     'Forgot Password',

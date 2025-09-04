@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
+import 'package:food_delivery_app/screens/loyaltypoint/loyaltypoint.dart';
 import 'package:food_delivery_app/screens/profile/profile.dart';
+import 'package:food_delivery_app/screens/wishlist/wishlist.dart';
 import 'package:food_delivery_app/widgets/drawer_tile.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -48,13 +48,13 @@ class CustomDrawer extends StatelessWidget {
                 DrawerTile(
                   iconpath: 'assets/svgs/heart.svg',
                   data: 'Wishlist',
-                  onTap: () {},
+                  onTap: () {Get.to(() => Wishlist());},
                 ),
                 Gap(40),
                 DrawerTile(
                   iconpath: 'assets/svgs/medal.svg',
                   data: 'Loyalty Points',
-                  onTap: () {},
+                  onTap: () {Get.to(() => LoyaltyPoint());},
                 ),
                 Gap(40),
                 DrawerTile(

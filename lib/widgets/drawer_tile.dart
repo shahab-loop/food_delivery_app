@@ -7,11 +7,17 @@ class DrawerTile extends StatelessWidget {
   final String iconpath;
   final String data;
   final void Function()? onTap;
-  const DrawerTile({super.key, required this.iconpath, required this.data, this.onTap});
+  const DrawerTile({
+    super.key,
+    required this.iconpath,
+    required this.data,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(onTap: onTap,
+    return GestureDetector(
+      onTap: onTap,
       child: Container(
         width: 242,
         decoration: BoxDecoration(color: ThemeManager.primaryColor),
@@ -19,12 +25,16 @@ class DrawerTile extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(height: 22, width: 20, child: SvgPicture.asset(iconpath,color:ThemeManager.white,)),
+                SizedBox(
+                  height: 22,
+                  width: 20,
+                  child: SvgPicture.asset(iconpath, color: ThemeManager.white),
+                ),
                 Gap(30),
                 Text(data, style: Theme.of(context).textTheme.displayMedium),
               ],
             ),
-            Divider(color: ThemeManager.white,)
+            Divider(color: ThemeManager.white),
           ],
         ),
       ),

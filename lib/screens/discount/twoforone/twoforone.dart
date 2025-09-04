@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
-import 'package:food_delivery_app/screens/bestsellers/bestsellers.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
-import 'package:food_delivery_app/screens/discountedoffers/discountedoffers.dart';
-import 'package:food_delivery_app/screens/maindishes/maindishes.dart';
+import 'package:food_delivery_app/widgets/circleavatar_home.dart';
+import 'package:food_delivery_app/widgets/discountedbuttons_widget.dart';
+import 'package:food_delivery_app/widgets/discountedoffers_widget.dart';
+import 'package:food_delivery_app/widgets/items.dart';
 import 'package:food_delivery_app/widgets/my_drawer.dart';
-import 'package:food_delivery_app/widgets/menuelist_widget.dart';
+import 'package:food_delivery_app/widgets/reddiscountbutton_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
-class Homescreen extends StatelessWidget {
-  const Homescreen({super.key});
+class TwoForOne extends StatelessWidget {
+  const TwoForOne({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class Homescreen extends StatelessWidget {
               child: Container(
                 height: 325,
                 width: double.infinity,
-                color: ThemeManager.primaryColor,
+                color: ThemeManager.red,
                 child: Column(
                   children: [
                     Row(
@@ -68,12 +70,12 @@ class Homescreen extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      'Menue',
+                      'Discounted Offers',
                       style: Theme.of(context).textTheme.headlineMedium,
                     ),
                     const Gap(20),
                     Text(
-                      'Homemade meals prepared with love. Richest ingredients. ',
+                      'Click for deals on combos and dishes which are refreshed weekly.  ',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
@@ -121,7 +123,7 @@ class Homescreen extends StatelessWidget {
               right: 0,
               bottom: 0,
               child: Container(
-                width: 375,
+                // width: 375,
                 height: 325,
                 decoration: BoxDecoration(
                   color: ThemeManager.white,
@@ -130,47 +132,33 @@ class Homescreen extends StatelessWidget {
                     topRight: Radius.circular(30),
                   ),
                 ),
-                child: ListView(
-                  children: [
-                    MenuelistWidget(
-                      image: 'assets/images/maindishes.png',
-                      menue: 'Main Dishes',
-                      rating: '4.9',
-                      review: '(355 ratings)',
-                      price: '₦2500',
-                      onTap: () {
-                        print('object');
-                        Get.to(() => MainDishes());
-                      },
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left:25 ,right:25 ),
+                    child: Column(
+                      children: [
+                        DiscountedButtonsWidget(first: '2 For', second: '1',),
+                        Gap(10),
+                        RedDiscountButtonWidget(image: 'assets/images/shwarma.png',),
+                        Gap(40),
+                        RedDiscountButtonWidget(image: 'assets/images/CheesyBread.png',),
+                        Gap(10),
+                        Divider(thickness: 4, color: ThemeManager.white12),
+                        Gap(26),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatarHome( svgPath: 'assets/svgs/profile.svg'),
+                            Gap(30),
+                            CircleAvatarHome( imagePath: Icons.home,),
+                            Gap(30),
+                            CircleAvatarHome( svgPath: 'assets/svgs/greyheart.svg'),
+                          ],
+                        ),
+                        Gap(26),
+                      ],
                     ),
-                    MenuelistWidget(
-                      image: 'assets/images/CheesyBread.png',
-                      menue: 'Best Sellers',
-                      rating: '4.8',
-                      review: '(105 ratings)',
-                      price: '₦2000',
-                      onTap: () {
-                        Get.to(() => Bestsellers());
-                      },
-                    ),
-                    MenuelistWidget(
-                      image: 'assets/images/FoodComboOffers.jpg',
-                      menue: 'Discounted Offers',
-                      rating: '4.6',
-                      review: '(500 ratings)',
-                      price: '₦500',
-                      onTap: () {
-                        Get.to(() => DiscountedOffers());
-                      },
-                    ),
-                    MenuelistWidget(
-                      image: '',
-                      menue: 'Meal Plans',
-                      rating: '5',
-                      review: '(203 ratings)',
-                      price: '₦3000',
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),

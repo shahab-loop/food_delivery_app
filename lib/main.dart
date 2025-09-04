@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
-import 'package:food_delivery_app/screens/auth/login/login_screen.dart';
-import 'package:food_delivery_app/screens/auth/reset_password/reset_password.dart';
-import 'package:food_delivery_app/screens/auth/verification/verification.dart';
-import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
 import 'package:food_delivery_app/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:sizer/sizer.dart';
 
-import 'screens/auth/forgot_password/forgot_password.dart';
-import 'widgets/my_drawer.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
-import 'package:food_delivery_app/screens/bestsellers/bestsellers.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
-import 'package:food_delivery_app/screens/discountedoffers/discountedoffers.dart';
-import 'package:food_delivery_app/screens/maindishes/maindishes.dart';
+import 'package:food_delivery_app/screens/friedrice/friedrice.dart';
+import 'package:food_delivery_app/screens/jollofrice/jollof_rice.dart';
+import 'package:food_delivery_app/screens/pastaragatoni/pastaragatoni.dart';
+import 'package:food_delivery_app/widgets/circleavatar_home.dart';
+import 'package:food_delivery_app/widgets/maindishes_widget.dart';
 import 'package:food_delivery_app/widgets/my_drawer.dart';
-import 'package:food_delivery_app/widgets/menuelist_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
-class Homescreen extends StatelessWidget {
-  const Homescreen({super.key});
+class MainDishes extends StatelessWidget {
+  const MainDishes({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,12 +69,12 @@ class Homescreen extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      'Menue',
+                      'Main Dishes',
                       style: Theme.of(context).textTheme.headlineMedium,
                     ),
                     const Gap(20),
                     Text(
-                      'Homemade meals prepared with love. Richest ingredients. ',
+                      'Find the best selling dishes. All meals are preparred fresh.  ',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
@@ -130,47 +131,104 @@ class Homescreen extends StatelessWidget {
                     topRight: Radius.circular(30),
                   ),
                 ),
-                child: ListView(
-                  children: [
-                    MenuelistWidget(
-                      image: 'assets/images/maindishes.png',
-                      menue: 'Main Dishes',
-                      rating: '4.9',
-                      review: '(355 ratings)',
-                      price: '₦2500',
-                      onTap: () {
-                        print('object');
-                        Get.to(() => MainDishes());
-                      },
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            MainDishesWidget(
+                              image: 'assets/images/friedrice.png',
+                              text: 'Fried Rice',
+                            onTap: () {
+                              Get.to(() => FriedRice());
+                              print('Fried Rice');
+                            },
+                            ),
+                            Gap(40),
+                            Row(
+                              children: [
+                                MainDishesWidget(
+                                  image: 'assets/images/JollofRice.png',
+                                  text: 'Jollof rice',
+                                  onTap: () {
+                                    Get.to(() => JollofRice());
+                                    print('object');
+                                  },
+                                ),
+                                Gap(10),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Divider(thickness: 4, color: ThemeManager.white12),
+                        Gap(10),
+                        Row(
+                          children: [
+                            MainDishesWidget(
+                              image: 'assets/images/rice.png',
+                              text: 'White Rice',
+                              onTap: () {
+                                Get.to(() => JollofRice());
+                                print('object');
+                              },
+                            ),
+                            Gap(40),
+                            Row(
+                              children: [
+                                MainDishesWidget(
+                                  image: 'assets/images/maindishes.png',
+                                  text: 'Pasta Rigatoni',
+                                  onTap: () {
+                                    Get.to(() => PastaRagatoni());
+                                    print('object');
+                                  },
+                                ),
+                                Gap(10),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Divider(thickness: 2, color: ThemeManager.white12),
+                        Row(
+                          children: [
+                            MainDishesWidget(
+                              image: 'assets/images/amala.png',
+                              text: 'Amala',
+                            ),
+                            Gap(40),
+                            Row(
+                              children: [
+                                MainDishesWidget(
+                                  image: 'assets/images/maindishes.png',
+                                  text: 'Butterfly PAsta',
+                                ),
+                                Gap(10),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Divider(thickness: 4, color: ThemeManager.white12),
+                        Gap(26),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatarHome(
+                              svgPath: 'assets/svgs/profile.svg',
+                            ),
+                            Gap(30),
+                            CircleAvatarHome(imagePath: Icons.home),
+                            Gap(30),
+                            CircleAvatarHome(
+                              svgPath: 'assets/svgs/greybucket.svg',
+                            ),
+                          ],
+                        ),
+                        Gap(26),
+                      ],
                     ),
-                    MenuelistWidget(
-                      image: 'assets/images/CheesyBread.png',
-                      menue: 'Best Sellers',
-                      rating: '4.8',
-                      review: '(105 ratings)',
-                      price: '₦2000',
-                      onTap: () {
-                        Get.to(() => Bestsellers());
-                      },
-                    ),
-                    MenuelistWidget(
-                      image: 'assets/images/FoodComboOffers.jpg',
-                      menue: 'Discounted Offers',
-                      rating: '4.6',
-                      review: '(500 ratings)',
-                      price: '₦500',
-                      onTap: () {
-                        Get.to(() => DiscountedOffers());
-                      },
-                    ),
-                    MenuelistWidget(
-                      image: '',
-                      menue: 'Meal Plans',
-                      rating: '5',
-                      review: '(203 ratings)',
-                      price: '₦3000',
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),

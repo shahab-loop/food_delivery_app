@@ -13,6 +13,8 @@ class ThemeManager {
   static const Color fbColor = Color(0xff0F71A8);
   static const Color white12 = Color(0xffF1F1F2);
   static const Color borderColor = Color(0xffC4C4C4);
+  static const Color red = Color(0xffF44336);
+
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
@@ -72,7 +74,7 @@ class ThemeManager {
       ),
       titleLarge: TextStyle(
         fontFamily: 'avenir',
-        fontWeight: FontWeight.w100,
+        fontWeight: FontWeight.w900,
         fontSize: 20,
         color: white,
       ),
@@ -90,7 +92,7 @@ class ThemeManager {
       ),
       labelMedium: TextStyle(
         fontFamily: 'avenir',
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w800,
         fontSize: 25,
         color: black,
       ),

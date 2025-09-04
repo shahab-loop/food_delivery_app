@@ -7,6 +7,7 @@ class MenuelistWidget extends StatelessWidget {
   final String rating;
   final String review;
   final String price;
+  final VoidCallback? onTap;
 
   const MenuelistWidget({
     super.key,
@@ -15,14 +16,13 @@ class MenuelistWidget extends StatelessWidget {
     required this.rating,
     required this.review,
     required this.price,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('Main Dishes');
-      },
+      onTap: onTap,
       child: SizedBox(
         height: 345,
         width: 210,

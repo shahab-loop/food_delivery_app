@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
-import 'package:food_delivery_app/screens/jollofrice/controller/controller.dart';
+import 'package:food_delivery_app/screens/jollofrice/controller/jollof_rice_controller.dart';
 import 'package:get/get.dart';
 
 
 class CustomDropdown extends StatelessWidget {
   CustomDropdown({super.key});
 
-  final DropdownController controller = Get.put(DropdownController());
+  final JollofRiceController controller = Get.put(JollofRiceController());
 
   @override
   Widget build(BuildContext context) {

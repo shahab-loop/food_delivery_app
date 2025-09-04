@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
-import 'package:food_delivery_app/screens/friedrice/friedrice.dart';
 import 'package:food_delivery_app/screens/jollofrice/jollof_rice.dart';
-import 'package:food_delivery_app/screens/pastaragatoni/pastaragatoni.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:food_delivery_app/widgets/maindishes_widget.dart';
 import 'package:food_delivery_app/widgets/my_drawer.dart';
@@ -141,10 +139,15 @@ class MainDishes extends StatelessWidget {
                             MainDishesWidget(
                               image: 'assets/images/friedrice.png',
                               text: 'Fried Rice',
-                            onTap: () {
-                              Get.to(() => FriedRice());
-                              print('Fried Rice');
-                            },
+                              onTap: () {
+                                Get.to(
+                                  () => JollofRice(),
+                                  arguments: {
+                                    "image": "assets/images/friedrice.png",
+                                  },
+                                );
+                                print('Fried Rice');
+                              },
                             ),
                             Gap(40),
                             Row(
@@ -153,8 +156,12 @@ class MainDishes extends StatelessWidget {
                                   image: 'assets/images/JollofRice.png',
                                   text: 'Jollof rice',
                                   onTap: () {
-                                    Get.to(() => JollofRice());
-                                    print('object');
+                                    Get.to(
+                                      () => JollofRice(),
+                                      arguments: {
+                                        "image": "assets/images/JollofRice.png",
+                                      },
+                                    );
                                   },
                                 ),
                                 Gap(10),
@@ -170,7 +177,12 @@ class MainDishes extends StatelessWidget {
                               image: 'assets/images/rice.png',
                               text: 'White Rice',
                               onTap: () {
-                                Get.to(() => JollofRice());
+                                Get.to(
+                                  () => JollofRice(),
+                                  arguments: {
+                                    "image": "assets/images/rice.png",
+                                  },
+                                );
                                 print('object');
                               },
                             ),
@@ -181,7 +193,12 @@ class MainDishes extends StatelessWidget {
                                   image: 'assets/images/maindishes.png',
                                   text: 'Pasta Rigatoni',
                                   onTap: () {
-                                    Get.to(() => PastaRagatoni());
+                                    Get.to(
+                                      () => JollofRice(),
+                                      arguments: {
+                                        "image": "assets/images/maindishes.png",
+                                      },
+                                    );
                                     print('object');
                                   },
                                 ),
@@ -196,6 +213,14 @@ class MainDishes extends StatelessWidget {
                             MainDishesWidget(
                               image: 'assets/images/amala.png',
                               text: 'Amala',
+                              onTap: (){
+                                Get.to(
+                                      () => JollofRice(),
+                                  arguments: {
+                                    "image": "assets/images/amala.png",
+                                  },
+                                );
+                              },
                             ),
                             Gap(40),
                             Row(
@@ -203,6 +228,14 @@ class MainDishes extends StatelessWidget {
                                 MainDishesWidget(
                                   image: 'assets/images/maindishes.png',
                                   text: 'Butterfly PAsta',
+                                  onTap: (){
+                                    Get.to(
+                                          () => JollofRice(),
+                                      arguments: {
+                                        "image": "assets/images/maindishes.png",
+                                      },
+                                    );
+                                  },
                                 ),
                                 Gap(10),
                               ],

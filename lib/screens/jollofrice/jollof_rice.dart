@@ -1,16 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
+import 'package:food_delivery_app/screens/jollofrice/controller/jollof_rice_controller.dart';
 import 'package:food_delivery_app/widgets/buttoncontainer.dart';
 import 'package:food_delivery_app/widgets/dropdownbutton.dart';
 import 'package:food_delivery_app/widgets/items.dart';
 import 'package:food_delivery_app/widgets/my_drawer.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class JollofRice extends StatelessWidget {
   const JollofRice({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final JollofRiceController controller = Get.put(JollofRiceController());
+    log('image: ${controller.image}');
     return Scaffold(
       drawer: CustomDrawer(),
       body: SafeArea(
@@ -25,7 +31,7 @@ class JollofRice extends StatelessWidget {
                 width: double.infinity,
                 color: ThemeManager.primaryColor,
                 child: Image.asset(
-                  'assets/images/JollofRice.png',
+                  controller.image,
                   fit: BoxFit.fill,
                 ),
               ),

@@ -19,7 +19,7 @@ class RedDiscountButtonWidget extends StatelessWidget {
         Positioned(
           bottom: 0,
           child: GestureDetector(
-            onTap: () {},
+            onTap: onTap,
             child: Container(
               height: 231,
               width: 310,

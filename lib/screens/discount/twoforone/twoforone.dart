@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
+import 'package:food_delivery_app/screens/jollofrice/jollof_rice.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:food_delivery_app/widgets/discountedbuttons_widget.dart';
 import 'package:food_delivery_app/widgets/discountedoffers_widget.dart';
@@ -139,9 +140,25 @@ class TwoForOne extends StatelessWidget {
                       children: [
                         DiscountedButtonsWidget(first: '2 For', second: '1',),
                         Gap(10),
-                        RedDiscountButtonWidget(image: 'assets/images/shwarma.png',),
+                        RedDiscountButtonWidget(image: 'assets/images/shwarma.png',onTap: () {
+                          Get.to(
+                                () => JollofRice(),
+                            arguments: {
+                              "image": "assets/images/shwarma.png",
+                            },
+                          );
+                          print('Fried Rice');
+                        },),
                         Gap(40),
-                        RedDiscountButtonWidget(image: 'assets/images/CheesyBread.png',),
+                        RedDiscountButtonWidget(image: 'assets/images/CheesyBread.png',onTap: () {
+                          Get.to(
+                                () => JollofRice(),
+                            arguments: {
+                              "image": "assets/images/CheesyBread.png",
+                            },
+                          );
+                          print('Fried Rice');
+                        },),
                         Gap(10),
                         Divider(thickness: 4, color: ThemeManager.white12),
                         Gap(26),

@@ -213,9 +213,9 @@ class MainDishes extends StatelessWidget {
                             MainDishesWidget(
                               image: 'assets/images/amala.png',
                               text: 'Amala',
-                              onTap: (){
+                              onTap: () {
                                 Get.to(
-                                      () => JollofRice(),
+                                  () => JollofRice(),
                                   arguments: {
                                     "image": "assets/images/amala.png",
                                   },
@@ -228,9 +228,9 @@ class MainDishes extends StatelessWidget {
                                 MainDishesWidget(
                                   image: 'assets/images/maindishes.png',
                                   text: 'Butterfly PAsta',
-                                  onTap: (){
+                                  onTap: () {
                                     Get.to(
-                                          () => JollofRice(),
+                                      () => JollofRice(),
                                       arguments: {
                                         "image": "assets/images/maindishes.png",
                                       },

@@ -34,322 +34,401 @@ class JollofRice extends StatelessWidget {
                 child: Image.asset(controller.image, fit: BoxFit.fill),
               ),
             ),
-
             Positioned(
               top: 250,
               left: 0,
               right: 0,
               bottom: 0,
-              child: Container(
-                width: 375,
-                height: 325,
-                decoration: BoxDecoration(
-                  color: ThemeManager.white,
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
+              child: SizedBox(
+                child: Container(
+                  width: 375,
+                  height: 325,
+                  decoration: BoxDecoration(
+                    color: ThemeManager.white,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 145,
+                              width: 119,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Description',
+                                    style: Theme.of(context).textTheme.titleLarge
+                                        ?.copyWith(
+                                          color: ThemeManager.headerColor,
+                                          fontWeight: FontWeight.w900,
+                                        ),
+                                  ),
+                                  Gap(10),
+                                  Text(
+                                    'Our fried rice is made from the finest ingredients and veggies.Every single dish is made with fresh vegetables.Each plate is served with our signature chicken and a free',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.headerColor,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Gap(40),
+                            Container(
+                              width: 120,
+                              height: 145,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Latest Reviews',
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.black,
+                                          fontWeight: FontWeight.w900,
+                                        ),
+                                  ),
+                                  Divider(
+                                    thickness: 1,
+                                    color: ThemeManager.black,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    'Sarah Ofilia',
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.black,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Great Meal but delivery was a bit late',
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.black,
+                                          fontWeight: FontWeight.w100,
+                                          fontSize: 7,
+                                        ),
+                                  ),
+                                  Text(
+                                    '3mins ago',
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.black,
+                                          fontWeight: FontWeight.w100,
+                                          fontSize: 5,
+                                        ),
+                                  ),
+                                  Divider(
+                                    thickness: 1,
+                                    color: ThemeManager.black,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: ThemeManager.primaryColor,
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    'James Atite',
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.black,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Awesome as always!!!',
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.black,
+                                          fontWeight: FontWeight.w100,
+                                          fontSize: 7,
+                                        ),
+                                  ),
+                                  Text(
+                                    '10mins ago',
+                                    style: Theme.of(context).textTheme.titleSmall
+                                        ?.copyWith(
+                                          color: ThemeManager.black,
+                                          fontWeight: FontWeight.w100,
+                                          fontSize: 5,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Gap(10),
+                          ],
+                        ),
+                        Text(
+                          'Ingredients',
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: ThemeManager.headerColor,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        Gap(10),
+                        Row(
+                          children: [
+                            Items(
+                              image: 'assets/images/rice.png',
+                              height: 55,
+                              width: 70,
+                            ),
+                            Gap(10),
+                            Items(
+                              image: 'assets/images/oliveoil.png',
+                              height: 55,
+                              width: 70,
+                            ),
+                            Gap(10),
+                            Items(
+                              image: 'assets/images/vegetables.png',
+                              height: 55,
+                              width: 70,
+                            ),
+                            Gap(10),
+                            Items(
+                              image: 'assets/images/carrot.png',
+                              height: 55,
+                              width: 70,
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'Additions',
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: ThemeManager.headerColor,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        Gap(10),
+                        CustomDropdown(),
+                        Gap(26),
+                        Container(
+                          height: 67,
+                          decoration: BoxDecoration(
+                            color: ThemeManager.primaryColor,
+                            borderRadius: BorderRadius.circular(28),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Obx(
+                                  () => Text(
+                                    controller.totalPrice.toString(),
+                                    style: Theme.of(context).textTheme.titleLarge,
+                                  ),
+                                ),
+                                // Gap(30),
+                                Container(
+                                  height: 40,
+                                  // width: 10,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(28),
+                                    border: Border.all(color: ThemeManager.white),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          controller.decrement();
+                                          print(controller.count);
+                                        },
+                                        child: SizedBox(
+                                          height: 50,
+                                          width: 25,
+                                          child: Text(
+                                            '-',
+                                            textAlign: TextAlign.center,
+                                            style: Theme.of(
+                                              context,
+                                            ).textTheme.titleLarge,
+                                          ),
+                                        ),
+                                      ),
+                                      Gap(30),
+                                      Obx(
+                                        () => SizedBox(
+                                          height: 20,
+                                          width: 20,
+                                          child: Text(
+                                            controller.count.toString(),
+                                            textAlign: TextAlign.center,
+                                            style: Theme.of(
+                                              context,
+                                            ).textTheme.titleLarge,
+                                          ),
+                                        ),
+                                      ),
+                                      Gap(30),
+                                      GestureDetector(
+                                        onTap: () {
+                                          controller.increment();
+                                          print(controller.count);
+                                        },
+                                        child: SizedBox(
+                                          height: 50,
+                                          width: 25,
+                                          child: Text(
+                                            '+',
+                                            textAlign: TextAlign.center,
+                                            style: Theme.of(
+                                              context,
+                                            ).textTheme.titleLarge,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                // Gap(30),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.to(() => Cart());
+                                  },
+                                  child: Container(
+                                    height: 30,
+                                    width: 30,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: ThemeManager.white,
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Image.asset(
+                                        'assets/images/bucket.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(
-                            height: 145,
-                            width: 119,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Description',
-                                  style: Theme.of(context).textTheme.titleLarge
-                                      ?.copyWith(
-                                        color: ThemeManager.headerColor,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                ),
-                                Gap(10),
-                                Text(
-                                  'Our fried rice is made from the finest ingredients and veggies.Every single dish is made with fresh vegetables.Each plate is served with our signature chicken and a free',
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.headerColor,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Gap(40),
-                          Container(
-                            width: 120,
-                            height: 145,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Latest Reviews',
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.black,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                ),
-                                Divider(
-                                  thickness: 1,
-                                  color: ThemeManager.black,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                  ],
-                                ),
-                                Text(
-                                  'Sarah Ofilia',
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.black,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                ),
-                                Text(
-                                  'Great Meal but delivery was a bit late',
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.black,
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 7,
-                                      ),
-                                ),
-                                Text(
-                                  '3mins ago',
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.black,
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 5,
-                                      ),
-                                ),
-                                Divider(
-                                  thickness: 1,
-                                  color: ThemeManager.black,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: ThemeManager.primaryColor,
-                                    ),
-                                  ],
-                                ),
-                                Text(
-                                  'James Atite',
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.black,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                ),
-                                Text(
-                                  'Awesome as always!!!',
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.black,
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 7,
-                                      ),
-                                ),
-                                Text(
-                                  '10mins ago',
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(
-                                        color: ThemeManager.black,
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 5,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Gap(10),
-                        ],
-                      ),
-                      Text(
-                        'Ingredients',
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: ThemeManager.headerColor,
-                          fontWeight: FontWeight.w900,
+              ),
+            ),
+            Positioned(
+              top: 230,
+              left: 20,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 5,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Positioned(
+                      left: 20,
+                      child: CircleAvatar(
+                        radius: 12,
+                        backgroundImage: AssetImage(
+                          'assets/images/blackman.png',
                         ),
                       ),
-                      Gap(10),
-                      Row(
-                        children: [
-                          Items(
-                            image: 'assets/images/rice.png',
-                            height: 55,
-                            width: 70,
-                          ),
-                          Gap(10),
-                          Items(
-                            image: 'assets/images/oliveoil.png',
-                            height: 55,
-                            width: 70,
-                          ),
-                          Gap(10),
-                          Items(
-                            image: 'assets/images/vegetables.png',
-                            height: 55,
-                            width: 70,
-                          ),
-                          Gap(10),
-                          Items(
-                            image: 'assets/images/carrot.png',
-                            height: 55,
-                            width: 70,
-                          ),
-                        ],
+                    ),
+                    CircleAvatar(
+                      radius: 12,
+                      backgroundImage: AssetImage(
+                        'assets/images/blacklady.png',
                       ),
-                      Text(
-                        'Additions',
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: ThemeManager.headerColor,
-                          fontWeight: FontWeight.w900,
-                        ),
+                    ),
+                    const SizedBox(width: 40),
+                    const Text(
+                      "4.5 ★",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
-                      Gap(10),
-                      CustomDropdown(),
-                      Gap(26),
-                      Container(
-                        height: 67,
-                        decoration: BoxDecoration(
-                          color: ThemeManager.primaryColor,
-                          borderRadius: BorderRadius.circular(28),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Obx(() => Text(
-                                controller.totalPrice.toString(),
-                                style: Theme.of(context).textTheme.titleLarge,
-                              )),
-                              // Gap(30),
-                              Container(
-                                height: 40,
-                                // width: 10,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(28),
-                                  border: Border.all(color: ThemeManager.white),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {
-                                        controller.decrement();
-                                        print(controller.count);
-                                      },
-                                      child: SizedBox(
-                                        height: 50,
-                                        width: 25,
-                                        child: Text(
-                                          '-',
-                                          textAlign: TextAlign.center,
-                                          style: Theme.of(
-                                            context,
-                                          ).textTheme.titleLarge,
-                                        ),
-                                      ),
-                                    ),
-                                    Gap(30),
-                                    Obx(() => Text(
-                                      controller.count.toString(),
-                                      textAlign: TextAlign.center,
-                                      style: Theme.of(
-                                        context,
-                                      ).textTheme.titleLarge,
-                                    ),),
-                                    Gap(30),
-                                    GestureDetector(
-                                      onTap: () {
-                                        controller.increment();
-                                        print(controller.count);
-                                      },
-                                      child: SizedBox(
-                                        height: 50,
-                                        width: 25,
-                                        child: Text(
-                                          '+',
-                                          textAlign: TextAlign.center,
-                                          style: Theme.of(
-                                            context,
-                                          ).textTheme.titleLarge,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // Gap(30),
-                              GestureDetector(
-                                onTap: () {
-                                  Get.to(() => Cart());
-                                },
-                                child: Container(
-                                  height: 30,
-                                  width: 30,
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: ThemeManager.white,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Image.asset(
-                                      'assets/images/bucket.png',
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: 230,
+              right: 20,
+              child: Container(
+                height: 37,
+                width: 38,
+
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: ThemeManager.primaryColor,
+                    width: 2,
                   ),
+                ),
+                child: Icon(
+                  Icons.favorite_border,
+                  color: ThemeManager.primaryColor,
                 ),
               ),
             ),

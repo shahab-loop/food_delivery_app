@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
+import 'package:food_delivery_app/screens/jollofrice/jollof_rice.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:food_delivery_app/widgets/maindishes_widget.dart';
 import 'package:food_delivery_app/widgets/my_drawer.dart';
@@ -135,11 +136,28 @@ class Bestsellers extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            MainDishesWidget(image: 'assets/images/friedrice.png', text: 'Beef Burger'),
+                            MainDishesWidget(image: 'assets/images/burger.png', text: 'Beef Burger',
+                              onTap: () {
+                              Get.to(
+                                    () => JollofRice(),
+                                arguments: {
+                                  "image": "assets/images/burger.png",
+                                },
+                              );
+                              print('burger');
+                            },),
                             Gap(40),
                             Row(
                               children: [
-                                MainDishesWidget(image: 'assets/images/shwarma.png', text: 'Shawarma'),
+                                MainDishesWidget(image: 'assets/images/shwarma.png', text: 'Shawarma',onTap: () {
+                                  Get.to(
+                                        () => JollofRice(),
+                                    arguments: {
+                                      "image": "assets/images/shwarma.png",
+                                    },
+                                  );
+                                  print('shwarma');
+                                },),
                                 Gap(10),
                               ],
                             ),
@@ -149,11 +167,27 @@ class Bestsellers extends StatelessWidget {
                         Gap(10),
                         Row(
                           children: [
-                            MainDishesWidget(image: 'assets/images/rice.png', text: 'Pizza'),
+                            MainDishesWidget(image: 'assets/images/pizza.png', text: 'Pizza',onTap: () {
+                              Get.to(
+                                    () => JollofRice(),
+                                arguments: {
+                                  "image": "assets/images/pizza.png",
+                                },
+                              );
+                              print('Pizza');
+                            },),
                             Gap(40),
                             Row(
                               children: [
-                                MainDishesWidget(image: 'assets/images/CheesyBread.png', text: 'Cheesy Bread'),
+                                MainDishesWidget(image: 'assets/images/CheesyBread.png', text: 'Cheesy Bread',onTap: () {
+                                  Get.to(
+                                        () => JollofRice(),
+                                    arguments: {
+                                      "image": "assets/images/CheesyBread.png",
+                                    },
+                                  );
+                                  print('CheesyBread');
+                                },),
                                 Gap(10),
 
                               ],
@@ -163,11 +197,27 @@ class Bestsellers extends StatelessWidget {
                         Divider(thickness: 2, color: ThemeManager.white12),
                         Row(
                           children: [
-                            MainDishesWidget(image: 'assets/images/amala.png', text: 'Amala'),
+                            MainDishesWidget(image: 'assets/images/amala.png', text: 'Amala',onTap: () {
+                              Get.to(
+                                    () => JollofRice(),
+                                arguments: {
+                                  "image": "assets/images/Amala.png",
+                                },
+                              );
+                              print('Amala');
+                            },),
                             Gap(40),
                             Row(
                               children: [
-                                MainDishesWidget(image: 'assets/images/maindishes.png', text: 'Jollof Spaghetti'),
+                                MainDishesWidget(image: 'assets/images/Jollofspaghetti.png', text: 'Jollof Spaghetti',onTap: () {
+                                  Get.to(
+                                        () => JollofRice(),
+                                    arguments: {
+                                      "image": "assets/images/Jollofspaghetti.png",
+                                    },
+                                  );
+                                  print('jollofspahetti');
+                                },),
                                 Gap(10),
                               ],
                             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
+import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
 import 'package:food_delivery_app/screens/splash/controller/splash_controller.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -57,18 +58,22 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                   const Gap(34),
-                  Container(
-                    width: 227.px,
-                    height: 47.px,
-                    decoration: BoxDecoration(
-                      color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(34),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.arrow_forward,
-                        color: Color(0xff6A6A6A),
-                        size: 30,
+                  GestureDetector(onTap: () {
+                    Get.to(() => Homescreen());
+                  },
+                    child: Container(
+                      width: 227.px,
+                      height: 47.px,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFFFFFF),
+                        borderRadius: BorderRadius.circular(34),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Color(0xff6A6A6A),
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),

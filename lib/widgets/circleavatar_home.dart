@@ -42,7 +42,7 @@ class CircleAvatarHome extends StatelessWidget {
         child: Icon(imagePath!,color: ThemeManager.borderColor,),
       );
     } else {
-      return const Icon(Icons.image_not_supported); // fallback
+      return const Icon(Icons.image_not_supported);
     }
   }
 }

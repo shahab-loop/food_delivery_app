@@ -14,6 +14,8 @@ class ThemeManager {
   static const Color white12 = Color(0xffF1F1F2);
   static const Color borderColor = Color(0xffC4C4C4);
   static const Color red = Color(0xffF44336);
+  static const Color divider = Color(0xff94B2E0);
+  static const Color lightGrey = Color(0xff999A99E5);
 
 
   static final ThemeData darkTheme = ThemeData(

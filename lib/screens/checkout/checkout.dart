@@ -3,6 +3,7 @@ import 'package:food_delivery_app/common/base_scaffold.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/controller/cart_controller.dart';
 import 'package:food_delivery_app/screens/checkout/controller/checkout_controller.dart';
+import 'package:food_delivery_app/widgets/button_widget.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -303,6 +304,29 @@ class Checkout extends StatelessWidget {
                   ),
                 ),
               ),
+              Gap(11),
+              Container(
+                height: 52,
+                width: 113,
+                decoration: BoxDecoration(
+                  color: Color(0xffFF785B),
+                  borderRadius: BorderRadius.circular(33),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text(
+                    'Pay Now',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'avenir',
+                      color: Color(0xffFFFFFF),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w200,
+                    ),
+                  ),
+                ),
+              ),
+              Divider(color: ThemeManager.white12, thickness: 4),
               Gap(30),
 
               Row(

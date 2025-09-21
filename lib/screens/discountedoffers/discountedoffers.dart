@@ -5,6 +5,8 @@ import 'package:food_delivery_app/screens/discount/combos/combos.dart';
 import 'package:food_delivery_app/screens/discount/fiftypercent/fiftypercent.dart';
 import 'package:food_delivery_app/screens/discount/quarter/quarter.dart';
 import 'package:food_delivery_app/screens/discount/twoforone/twoforone.dart';
+import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
+import 'package:food_delivery_app/screens/profile/profile.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:food_delivery_app/widgets/discountedoffers_widget.dart';
 import 'package:food_delivery_app/widgets/items.dart';
@@ -231,13 +233,19 @@ class DiscountedOffers extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CircleAvatarHome(
-                              svgPath: 'assets/svgs/profile.svg',
+                              svgPath: 'assets/svgs/profile.svg',onTap:() {
+                              Get.to(Profile());
+                            } ,
                             ),
                             Gap(30),
-                            CircleAvatarHome(imagePath: Icons.home),
+                            CircleAvatarHome(imagePath: Icons.home,onTap:() {
+                              Get.to(Homescreen());
+                            } ,),
                             Gap(30),
                             CircleAvatarHome(
-                              svgPath: 'assets/svgs/greybucket.svg',
+                              svgPath: 'assets/svgs/greybucket.svg',onTap:() {
+                              Get.to(Cart());
+                            } ,
                             ),
                           ],
                         ),

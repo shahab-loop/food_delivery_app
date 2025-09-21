@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
+import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
+import 'package:food_delivery_app/screens/profile/profile.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:food_delivery_app/widgets/discountedbuttons_widget.dart';
 import 'package:food_delivery_app/widgets/discountedoffers_widget.dart';
@@ -148,15 +150,20 @@ class Combos extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CircleAvatarHome(
-                              svgPath: 'assets/svgs/profile.svg',
+                              svgPath: 'assets/svgs/profile.svg',onTap:() {
+                              Get.to(Profile());
+                            } ,
                             ),
                             Gap(30),
-                            CircleAvatarHome(imagePath: Icons.home),
+                            CircleAvatarHome(imagePath: Icons.home,onTap:() {
+                              Get.to(Homescreen());
+                            } ,),
                             Gap(30),
                             CircleAvatarHome(
-                              svgPath: 'assets/svgs/greyheart.svg',
-                            ),
-                          ],
+                              svgPath: 'assets/svgs/greybucket.svg',onTap:() {
+                              Get.to(Cart());
+                            } ,
+                            ),              ],
                         ),
                         Gap(26),
                       ],

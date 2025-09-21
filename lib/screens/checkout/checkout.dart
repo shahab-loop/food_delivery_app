@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/common/base_scaffold.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
+import 'package:food_delivery_app/screens/cart/cart.dart';
 import 'package:food_delivery_app/screens/cart/controller/cart_controller.dart';
 import 'package:food_delivery_app/screens/checkout/controller/checkout_controller.dart';
 import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
 import 'package:food_delivery_app/screens/payment/card_details/card_details.dart';
+import 'package:food_delivery_app/screens/profile/profile.dart';
 import 'package:food_delivery_app/widgets/button_widget.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:gap/gap.dart';
@@ -538,12 +540,21 @@ class Checkout extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatarHome(svgPath: 'assets/svgs/profile.svg'),
+                  CircleAvatarHome(
+                    svgPath: 'assets/svgs/profile.svg',onTap:() {
+                    Get.to(Profile());
+                  } ,
+                  ),
                   Gap(30),
-                  CircleAvatarHome(imagePath: Icons.home),
+                  CircleAvatarHome(imagePath: Icons.home,onTap:() {
+                    Get.to(Homescreen());
+                  } ,),
                   Gap(30),
-                  CircleAvatarHome(svgPath: 'assets/svgs/greybucket.svg'),
-                ],
+                  CircleAvatarHome(
+                    svgPath: 'assets/svgs/greybucket.svg',onTap:() {
+                    Get.to(Cart());
+                  } ,
+                  ),],
               ),
             ],
           ),

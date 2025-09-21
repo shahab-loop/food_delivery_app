@@ -108,11 +108,11 @@ class PaymentMethods extends StatelessWidget {
                     Get.to(Profile());
                   },),
                     Gap(36),
-                    CircleAvatarHome(svgPath: 'Icons.home',onTap:() {
+                    CircleAvatarHome(imagePath: Icons.home,onTap:() {
                       Get.to(Homescreen());
                     } ,),
                     Gap(36),
-                    CircleAvatarHome(svgPath: 'assets/svgs/bucket.svg',onTap: () {
+                    CircleAvatarHome(svgPath: 'assets/svgs/greybucket.svg',onTap: () {
                       Get.to(Cart());
                     },),
                 ],)

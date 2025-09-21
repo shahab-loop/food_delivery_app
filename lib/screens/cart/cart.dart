@@ -4,6 +4,7 @@ import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/controller/cart_controller.dart';
 import 'package:food_delivery_app/screens/checkout/checkout.dart';
 import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
+import 'package:food_delivery_app/screens/profile/profile.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -376,12 +377,21 @@ class Cart extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatarHome(svgPath: 'assets/svgs/profile.svg'),
+                  CircleAvatarHome(
+                    svgPath: 'assets/svgs/profile.svg',onTap:() {
+                    Get.to(Profile());
+                  } ,
+                  ),
                   Gap(30),
-                  CircleAvatarHome(imagePath: Icons.home),
+                  CircleAvatarHome(imagePath: Icons.home,onTap:() {
+                    Get.to(Homescreen());
+                  } ,),
                   Gap(30),
-                  CircleAvatarHome(svgPath: 'assets/svgs/greybucket.svg'),
-                ],
+                  CircleAvatarHome(
+                    svgPath: 'assets/svgs/greybucket.svg',onTap:() {
+                    Get.to(Cart());
+                  } ,
+                  ),],
               ),
             ],
           ),

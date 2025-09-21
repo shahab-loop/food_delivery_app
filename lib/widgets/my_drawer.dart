@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/loyaltypoint/loyaltypoint.dart';
+import 'package:food_delivery_app/screens/payment_methods/payment_methods.dart';
 import 'package:food_delivery_app/screens/profile/profile.dart';
 import 'package:food_delivery_app/screens/wishlist/wishlist.dart';
 import 'package:food_delivery_app/widgets/drawer_tile.dart';
@@ -32,7 +33,7 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 Gap(40),
                 Text(
-                  'Sanita Queen',
+                  'Shahab Nasir',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
@@ -60,7 +61,7 @@ class CustomDrawer extends StatelessWidget {
                 DrawerTile(
                   iconpath: 'assets/svgs/creditcard.svg',
                   data: 'Payment Methods',
-                  onTap: () {},
+                  onTap: () {Get.to(()=>PaymentMethods());},
                 ),
                 Gap(40),
               ],

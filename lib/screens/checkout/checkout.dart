@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/common/base_scaffold.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/controller/cart_controller.dart';
 import 'package:food_delivery_app/screens/checkout/controller/checkout_controller.dart';
+import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
+import 'package:food_delivery_app/screens/payment/card_details/card_details.dart';
 import 'package:food_delivery_app/widgets/button_widget.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:gap/gap.dart';
@@ -11,6 +14,216 @@ import 'package:get/get.dart';
 class Checkout extends StatelessWidget {
   final CartController cartController = Get.put(CartController());
   final CheckoutController checkoutController = Get.put(CheckoutController());
+  void showPaymentDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Container(
+            decoration: BoxDecoration(color: ThemeManager.white,borderRadius: BorderRadius.circular(26)),
+            padding: const EdgeInsets.all(20),
+            width: 317,height: 313,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Card Details",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: ThemeManager.primaryColor,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: "Card Number\ 0000 0000 0000 0000",
+                    // labelText: "Card Number",
+                    fillColor: ThemeManager.primaryColor,
+                    hintStyle: Theme.of(
+                      context,
+                    ).textTheme.bodyLarge?.copyWith(fontSize: 10),
+
+                    disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: ThemeManager.black),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: ThemeManager.headerColor),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: ThemeManager.primaryColor),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.datetime,
+                        decoration: InputDecoration(
+                          hintText: "Card Expiry\ MM/YY",
+                          // labelText: "",
+                          hintStyle: Theme.of(context).textTheme.bodyLarge
+                              ?.copyWith(
+                                fontSize: 10,
+                                color: ThemeManager.headerColor,
+                              ),
+                          disabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: ThemeManager.black),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ThemeManager.headerColor,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ThemeManager.primaryColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          hintText: "123 \ CVV",
+                          // labelText: "",
+                          hintStyle: Theme.of(context).textTheme.bodyLarge
+                              ?.copyWith(
+                                fontSize: 10,
+                                color: ThemeManager.headerColor,
+                              ),
+                          disabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: ThemeManager.black),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ThemeManager.headerColor,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: ThemeManager.primaryColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: ThemeManager.primaryColor,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 50,
+                      vertical: 15,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    elevation: 5,
+                  ),
+                  onPressed: () {
+                    showThanksNotificationDialog(context);
+                    // Navigator.pop(context);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("Payment Successful!")),
+                    );
+                  },
+                  child: const Text(
+                    "Pay Now",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void showThanksNotificationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Container(
+            decoration: BoxDecoration(color: ThemeManager.white,borderRadius: BorderRadius.circular(26)),
+            padding: const EdgeInsets.all(20),
+            width: 317,
+            height: 358,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 217,
+                  height: 192,
+                  decoration: BoxDecoration(color: ThemeManager.primaryColor,borderRadius: BorderRadius.circular(26)),
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Payment',
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'successull.',
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Thank you',
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Gap(58),
+                GestureDetector(onTap: () {
+                  Get.to(Homescreen());
+                },
+                  child: Row(mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      SvgPicture.asset('assets/svgs/arrowback.svg'),
+                      Text(
+                        'back home',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 
   Checkout({super.key});
 
@@ -150,41 +363,40 @@ class Checkout extends StatelessWidget {
               Gap(20),
               Text(
                 'Your Order Details',
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  fontWeight: FontWeight.w900,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w900),
               ),
               Gap(30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Container(
-                  height: 39,
-                  width: 149,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'House No.',
-                      fillColor: Color(0xffF3F3F3),
-                      hintStyle: Theme.of(
-                        context,
-                      ).textTheme.bodyLarge?.copyWith(fontSize: 10),
-                      disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: ThemeManager.black,
+                children: [
+                  Container(
+                    height: 39,
+                    width: 149,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'House No.',
+                        fillColor: Color(0xffF3F3F3),
+                        hintStyle: Theme.of(
+                          context,
+                        ).textTheme.bodyLarge?.copyWith(fontSize: 10),
+                        disabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: ThemeManager.black),
                         ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: ThemeManager.headerColor,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: ThemeManager.headerColor,
+                          ),
                         ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: ThemeManager.primaryColor,
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: ThemeManager.primaryColor,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
                   Container(
                     height: 39,
                     width: 149,
@@ -196,9 +408,7 @@ class Checkout extends StatelessWidget {
                           context,
                         ).textTheme.bodyLarge?.copyWith(fontSize: 10),
                         disabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: ThemeManager.black,
-                          ),
+                          borderSide: BorderSide(color: ThemeManager.black),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -212,39 +422,39 @@ class Checkout extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),]
+                  ),
+                ],
               ),
               Gap(9),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Container(
-                  height: 39,
-                  width: 149,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'City',
-                      fillColor: Color(0xffF3F3F3),
-                      hintStyle: Theme.of(
-                        context,
-                      ).textTheme.bodyLarge?.copyWith(fontSize: 10),
-                      disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: ThemeManager.black,
+                children: [
+                  Container(
+                    height: 39,
+                    width: 149,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'City',
+                        fillColor: Color(0xffF3F3F3),
+                        hintStyle: Theme.of(
+                          context,
+                        ).textTheme.bodyLarge?.copyWith(fontSize: 10),
+                        disabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: ThemeManager.black),
                         ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: ThemeManager.headerColor,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: ThemeManager.headerColor,
+                          ),
                         ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: ThemeManager.primaryColor,
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: ThemeManager.primaryColor,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
                   Container(
                     height: 39,
                     width: 149,
@@ -256,9 +466,7 @@ class Checkout extends StatelessWidget {
                           context,
                         ).textTheme.bodyLarge?.copyWith(fontSize: 10),
                         disabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: ThemeManager.black,
-                          ),
+                          borderSide: BorderSide(color: ThemeManager.black),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -272,7 +480,8 @@ class Checkout extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),]
+                  ),
+                ],
               ),
               Gap(9),
               Container(
@@ -287,41 +496,38 @@ class Checkout extends StatelessWidget {
                       context,
                     ).textTheme.bodyLarge?.copyWith(fontSize: 10),
                     disabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: ThemeManager.black,
-                      ),
+                      borderSide: BorderSide(color: ThemeManager.black),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: ThemeManager.headerColor,
-                      ),
+                      borderSide: BorderSide(color: ThemeManager.headerColor),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: ThemeManager.primaryColor,
-                      ),
+                      borderSide: BorderSide(color: ThemeManager.primaryColor),
                     ),
                   ),
                 ),
               ),
               Gap(11),
-              Container(
-                height: 52,
-                width: 113,
-                decoration: BoxDecoration(
-                  color: Color(0xffFF785B),
-                  borderRadius: BorderRadius.circular(33),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Text(
-                    'Pay Now',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'avenir',
-                      color: Color(0xffFFFFFF),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w200,
+              GestureDetector(
+                onTap: () => showPaymentDialog(context),
+                child: Container(
+                  height: 52,
+                  width: 113,
+                  decoration: BoxDecoration(
+                    color: Color(0xffFF785B),
+                    borderRadius: BorderRadius.circular(33),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Text(
+                      'Pay Now',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'avenir',
+                        color: Color(0xffFFFFFF),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w200,
+                      ),
                     ),
                   ),
                 ),
@@ -333,13 +539,12 @@ class Checkout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatarHome(svgPath: 'assets/svgs/profile.svg'),
-                   Gap(30),
+                  Gap(30),
                   CircleAvatarHome(imagePath: Icons.home),
-                   Gap(30),
+                  Gap(30),
                   CircleAvatarHome(svgPath: 'assets/svgs/greybucket.svg'),
                 ],
               ),
-
             ],
           ),
         ),
@@ -352,7 +557,11 @@ class CustomCheckBoxRow extends StatelessWidget {
   final RxBool isCheck;
   final String text;
 
-  const CustomCheckBoxRow({super.key, required this.isCheck, required this.text});
+  const CustomCheckBoxRow({
+    super.key,
+    required this.isCheck,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -360,8 +569,8 @@ class CustomCheckBoxRow extends StatelessWidget {
       onTap: () {
         isCheck.value = !isCheck.value;
       },
-      child: Obx( // <- This is crucial
-            () => Row(
+      child: Obx(
+        () => Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
@@ -373,20 +582,16 @@ class CustomCheckBoxRow extends StatelessWidget {
               ),
               child: Center(
                 child: isCheck.value
-                    ? Icon(
-                  Icons.check,
-                  color: Colors.black,
-                  size: 16,
-                )
+                    ? Icon(Icons.check, color: Colors.black, size: 16)
                     : null,
               ),
             ),
             const Gap(16),
             Text(
               text,
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                fontWeight: FontWeight.w300,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w300),
             ),
           ],
         ),
@@ -394,4 +599,3 @@ class CustomCheckBoxRow extends StatelessWidget {
     );
   }
 }
-

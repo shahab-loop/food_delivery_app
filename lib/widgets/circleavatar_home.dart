@@ -5,19 +5,17 @@ import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 class CircleAvatarHome extends StatelessWidget {
   final String? svgPath;   // for svg
   final IconData? imagePath; // for image
-
+final void Function()? onTap;
   const CircleAvatarHome({
     super.key,
     this.svgPath,
-    this.imagePath,
+    this.imagePath, this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('Image tapped');
-      },
+      onTap: onTap,
       child: Container(
         height: 37,
         width: 38,

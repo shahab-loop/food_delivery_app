@@ -6,6 +6,7 @@ import 'package:food_delivery_app/screens/discount/fiftypercent/fiftypercent.dar
 import 'package:food_delivery_app/screens/discount/quarter/quarter.dart';
 import 'package:food_delivery_app/screens/discount/twoforone/twoforone.dart';
 import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
+import 'package:food_delivery_app/screens/jollofrice/jollof_rice.dart';
 import 'package:food_delivery_app/screens/profile/profile.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:food_delivery_app/widgets/discountedoffers_widget.dart';
@@ -200,12 +201,28 @@ class DiscountedOffers extends StatelessWidget {
                               image: 'assets/images/maindishes.png',
                               height: 110,
                               width: 110,
+                              onTap: () {
+                                Get.to(
+                                      () => JollofRice(),
+                                  arguments: {
+                                    "image": "assets/images/maindishes.png",
+                                  },
+                                );
+                              },
                             ),
                             Gap(100),
                             Items(
                               image: 'assets/images/JollofRice.png',
                               height: 110,
                               width: 110,
+                              onTap: () {
+                                Get.to(
+                                      () => JollofRice(),
+                                  arguments: {
+                                    "image": "assets/images/JollofRice.png",
+                                  },
+                                );
+                              },
                             ),
                             Gap(10),
                           ],
@@ -217,12 +234,28 @@ class DiscountedOffers extends StatelessWidget {
                               image: 'assets/images/Jollofspaghetti.png',
                               height: 110,
                               width: 110,
+                              onTap: () {
+                                Get.to(
+                                      () => JollofRice(),
+                                  arguments: {
+                                    "image": "assets/images/Jollofspaghetti.png",
+                                  },
+                                );
+                              },
                             ),
                             Gap(100),
                             Items(
                               image: 'assets/images/amala.png',
                               height: 110,
                               width: 110,
+                              onTap: () {
+                                Get.to(
+                                      () => JollofRice(),
+                                  arguments: {
+                                    "image": "assets/images/amala.png",
+                                  },
+                                );
+                              },
                             ),
                             Gap(10),
                           ],

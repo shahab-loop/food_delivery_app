@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/core/res/theme/theme_manager.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
 import 'package:food_delivery_app/screens/homescreen/homescreen.dart';
+import 'package:food_delivery_app/screens/jollofrice/jollof_rice.dart';
 import 'package:food_delivery_app/screens/profile/profile.dart';
 import 'package:food_delivery_app/widgets/circleavatar_home.dart';
 import 'package:food_delivery_app/widgets/discountedbuttons_widget.dart';
@@ -140,9 +141,23 @@ class Quarter extends StatelessWidget {
                       children: [
                         DiscountedButtonsWidget(first: 'Up To', second: ' 75%',),
                         Gap(10),
-                        RedDiscountButtonWidget(image: 'assets/images/shwarma.png',),
+                        RedDiscountButtonWidget(image: 'assets/images/shwarma.png',onTap:() {
+                          Get.to(
+                                () => JollofRice(),
+                            arguments: {
+                              "image": "assets/images/shwarma.png",
+                            },
+                          );
+                        } ,),
                         Gap(40),
-                        RedDiscountButtonWidget(image: 'assets/images/rice.png',),
+                        RedDiscountButtonWidget(image: 'assets/images/rice.png',onTap: () {
+                          Get.to(
+                                () => JollofRice(),
+                            arguments: {
+                              "image": "assets/images/rice.png",
+                            },
+                          );
+                        },),
                         Gap(10),
                         Divider(thickness: 4, color: ThemeManager.white12),
                         Gap(26),

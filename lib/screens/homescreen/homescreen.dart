@@ -4,6 +4,7 @@ import 'package:food_delivery_app/screens/bestsellers/bestsellers.dart';
 import 'package:food_delivery_app/screens/cart/cart.dart';
 import 'package:food_delivery_app/screens/discountedoffers/discountedoffers.dart';
 import 'package:food_delivery_app/screens/maindishes/maindishes.dart';
+import 'package:food_delivery_app/screens/mealplans/mealplans.dart';
 import 'package:food_delivery_app/widgets/my_drawer.dart';
 import 'package:food_delivery_app/widgets/menuelist_widget.dart';
 import 'package:gap/gap.dart';
@@ -169,6 +170,7 @@ class Homescreen extends StatelessWidget {
                       rating: '5',
                       review: '(203 ratings)',
                       price: '₦3000',
+                      onTap: () {Get.to(() => Mealplans());},
                     ),
                   ],
                 ),

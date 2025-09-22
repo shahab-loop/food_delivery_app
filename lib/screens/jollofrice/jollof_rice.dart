@@ -384,20 +384,16 @@ class JollofRice extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Positioned(
-                      left: 20,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
                       child: CircleAvatar(
                         radius: 12,
-                        backgroundImage: AssetImage(
-                          'assets/images/blackman.png',
-                        ),
+                        backgroundImage: AssetImage('assets/images/blackman.png'),
                       ),
                     ),
                     CircleAvatar(
                       radius: 12,
-                      backgroundImage: AssetImage(
-                        'assets/images/blacklady.png',
-                      ),
+                      backgroundImage: AssetImage('assets/images/blacklady.png'),
                     ),
                     const SizedBox(width: 40),
                     const Text(
